@@ -26,8 +26,8 @@ const MobileNavigation = () => {
             className="absolute opacity-75 h-screen z-10 top-0 left-0 w-full bg-[#6B7280]"
             onClick={handleClose}
           />
-          <div className="px-1 pt-1 flex ">
-            <div className="flex flex-col absolute z-20 px-5 pt-4 pb-6 top-0 left-0 bg-white w-[98%] rounded-lg ml-1">
+          <div className="px-1 pt-1 flex">
+            <div className="flex flex-col absolute z-20 px-5 pt-4 pb-6 top-1 left-0 bg-white w-[98%] rounded-lg ml-1">
               <div className="flex justify-between w-full mb-8">
                 <Image alt="logo" src="/logo.svg" width={35} height={32} />
                 <Image
