@@ -19,11 +19,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} mx-auto my-0 h-screen max-w-7xl`}>
+      <body
+        className={`${inter.className} mx-auto my-0 h-screen max-w-7xl pt-6 px-4`}
+      >
         <header>
           <Navigation />
         </header>
-        <main className="h-full">{children}</main>
+        <main className="h-full px-4">{children}</main>
       </body>
     </html>
   )
