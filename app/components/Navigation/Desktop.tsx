@@ -20,7 +20,7 @@ const DesktopNavigation = () => (
         <Link href="/login">Log in</Link>
       </li>
       <li>
-        <Link href="/login">
+        <Link href="/signup">
           <Button
             text="Start free trial"
             classNames="bg-[#4B5563] px-[17px] py-[9px]"
