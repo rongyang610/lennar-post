@@ -5,10 +5,10 @@ import EmailForm from '@/components/EmailForm'
 
 export default function Home() {
   return (
-    <section className="flex h-full flex-col justify-center gap-6 overflow-hidden relative">
+    <section className="flex h-full flex-col md:justify-center gap-6 overflow-visible md:overflow-hidden relative">
       <Image
         alt="dashboard"
-        className="absolute my-auto md:right-[-325px] lg:right-[-100px] xl:right-0"
+        className="absolute m-auto w-[344px] h-[343px] md:w-auto md:h-auto my-0 md:my-auto mx-auto md:mx-0 left-0 md:left-auto right-0 bottom-[-100px] md:bottom-auto md:right-[-325px] lg:right-[-100px] xl:right-0"
         src="/illustration.png"
         width={625}
         height={624}
