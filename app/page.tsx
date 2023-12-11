@@ -5,7 +5,14 @@ import EmailForm from '@/components/EmailForm'
 
 export default function Home() {
   return (
-    <section className="flex h-full flex-col justify-center bg-[url('/illustration.png')] bg-auto bg-right bg-no-repeat gap-6">
+    <section className="flex h-full flex-col justify-center gap-6 overflow-hidden relative">
+      <Image
+        alt="dashboard"
+        className="absolute my-auto md:right-[-325px] lg:right-[-100px] xl:right-0"
+        src="/illustration.png"
+        width={625}
+        height={624}
+      />
       <div className="max-w-[592px]">
         <div className="flex w-fit gap-4 rounded-[14px] bg-black py-1 pl-1 pr-2">
           <h5 className="h-fit rounded-[10px] bg-[#6366F1] px-3 py-0.5 text-xs">
@@ -21,8 +28,8 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="flex flex-col gap-5 mb-6">
-          <h1 className="flex flex-col text-6xl font-extrabold mb-5">
+        <div className="flex flex-col gap-5 mb-6 sm:max-w-[77%]">
+          <h1 className="flex flex-col sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-5">
             A better way to
             <span className="text-[#818CF8]">ship web apps</span>
           </h1>
