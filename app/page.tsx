@@ -28,7 +28,7 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="flex flex-col gap-5 mb-6 sm:max-w-[77%]">
+        <div className="flex flex-col gap-5 mb-1 sm:max-w-[77%]">
           <h1 className="flex flex-col sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-5">
             A better way to
             <span className="text-[#818CF8]">ship web apps</span>
