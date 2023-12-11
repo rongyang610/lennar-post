@@ -25,7 +25,9 @@ export default function RootLayout({
         <header className="pr-4">
           <Navigation />
         </header>
-        <main className="h-full pl-4 items-center">{children}</main>
+        <main className="max-h-screen h-[calc(100vh_-_14rem)] md:h-[calc(100vh_-_4.5rem)] pl-4 items-center overflow-visible md:overflow-auto">
+          {children}
+        </main>
       </body>
     </html>
   )
