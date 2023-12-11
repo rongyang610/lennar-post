@@ -56,11 +56,11 @@ const MobileNavigation = () => {
               </Link>
             ))}
           </div>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 mx-1">
             <Button text="Start free trial" />
             <div className="flex justify-center">
               <span className="text-gray-500">Existing customer?</span>
-              <Link href="/login" className="text-gray-900 ml-1">
+              <Link href="/login" className="text-gray-900 ml-1 font-medium">
                 Login
               </Link>
             </div>
