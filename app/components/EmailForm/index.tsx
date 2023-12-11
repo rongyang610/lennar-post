@@ -17,11 +17,11 @@ const EmailForm = () => {
   }
   return (
     <form
-      className="flex sm:flex-row flex-col gap-3 sm:gap-5"
+      className="flex md:flex-row flex-col gap-3 sm:gap-5"
       onSubmit={handleSubmit}
     >
       <input
-        className="focus:outline-none text-black rounded-md px-4 py-3 w-full sm:w-[393px]"
+        className="focus:outline-none text-black rounded-md px-4 py-3 w-full md:w-[393px]"
         type="email"
         placeholder="Enter your email"
         value={email}

@@ -15,7 +15,7 @@ const MobileNavigation = () => {
     : 'top-[-40vh] invisible opacity-0 duration-300'
 
   return (
-    <div className="flex sm:hidden">
+    <div className="flex md:hidden">
       <Image
         src="/hamburger.svg"
         alt="hamburger menu"
