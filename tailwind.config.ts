@@ -21,6 +21,9 @@ const config: Config = {
         400: '#818CF8',
         500: '#6366F1',
       },
+      red: {
+        600: '#dc2626',
+      },
       white: '#fff',
     },
     extend: {
