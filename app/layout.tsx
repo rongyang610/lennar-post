@@ -20,12 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} mx-auto my-0 h-screen max-w-7xl pt-6 pl-4 bg-gray-900`}
+        className={`${inter.className} mx-auto my-0 h-screen max-w-7xl pt-6 px-4 md:pr-0 bg-gray-900`}
       >
-        <header className="pr-4">
+        <header className="px-0 md:pl-0 md:pr-4">
           <Navigation />
         </header>
-        <main className="max-h-screen h-[calc(100vh_-_14rem)] md:h-[calc(100vh_-_4.5rem)] pl-4 items-center overflow-visible md:overflow-auto">
+        <main className="max-h-screen h-[calc(100vh_-_14rem)] md:h-[calc(100vh_-_4.5rem)] pl-4 items-center overflow-visible">
           {children}
         </main>
       </body>
