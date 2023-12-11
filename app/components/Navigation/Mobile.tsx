@@ -26,7 +26,7 @@ const MobileNavigation = () => {
       />
       {show && (
         <div
-          className="fixed opacity-75 h-screen z-10 top-0 left-0 w-full bg-[#6B7280]"
+          className="fixed opacity-75 h-screen z-10 top-0 left-0 w-full bg-gray-500"
           onClick={handleClose}
         />
       )}
@@ -50,7 +50,7 @@ const MobileNavigation = () => {
               <Link
                 href={slug}
                 key={slug + title + key}
-                className="text-[#374151] w-fit"
+                className="text-gray-700 w-fit"
               >
                 {title}
               </Link>
@@ -59,8 +59,8 @@ const MobileNavigation = () => {
           <div className="flex flex-col gap-6">
             <Button text="Start free trial" />
             <div className="flex justify-center">
-              <span className="text-[#6B7280]">Existing customer?</span>
-              <Link href="/login" className="text-[#111827] ml-1">
+              <span className="text-gray-500">Existing customer?</span>
+              <Link href="/login" className="text-gray-900 ml-1">
                 Login
               </Link>
             </div>

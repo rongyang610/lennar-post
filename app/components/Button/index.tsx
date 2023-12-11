@@ -7,7 +7,7 @@ export default function Button({
 }: ButtonProps) {
   return (
     <button
-      className={`w-full md:w-fit px-4 py-3 rounded-md bg-[#6366F1] text-white ${classNames}`}
+      className={`w-full md:w-fit px-4 py-3 rounded-md bg-indigo-500 text-white ${classNames}`}
       type={type}
     >
       {text}

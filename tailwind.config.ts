@@ -8,6 +8,20 @@ const config: Config = {
   ],
   plugins: [],
   theme: {
+    colors: {
+      black: '#000',
+      gray: {
+        500: ' #6B7280',
+        600: ' #4B5563',
+        700: ' #374151',
+        900: '#111827',
+      },
+      indigo: {
+        400: '#818CF8',
+        500: '#6366F1',
+      },
+      white: '#fff',
+    },
     extend: {
       backgroundImage: {
         illustration: "url('/public/illustration.png)",

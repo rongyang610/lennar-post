@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} mx-auto my-0 h-screen max-w-7xl pt-6 pl-4`}
+        className={`${inter.className} mx-auto my-0 h-screen max-w-7xl pt-6 pl-4 bg-gray-900`}
       >
         <header className="pr-4">
           <Navigation />

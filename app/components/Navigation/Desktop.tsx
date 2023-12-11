@@ -23,7 +23,7 @@ const DesktopNavigation = () => (
         <Link href="/signup">
           <Button
             text="Start free trial"
-            classNames="bg-[#4B5563] px-[17px] py-[9px]"
+            classNames="bg-gray-600 px-[17px] py-[9px]"
           />
         </Link>
       </li>
