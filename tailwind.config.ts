@@ -22,7 +22,7 @@ const config: Config = {
         500: '#6366F1',
       },
       red: {
-        600: '#dc2626',
+        500: '#ef4444',
       },
       white: '#fff',
     },
