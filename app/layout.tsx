@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
 import Navigation from '@/components/Navigation'
+import ApolloProvider from '@/providers/ApolloProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,17 +19,19 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body
-        className={`${inter.className} mx-auto my-0 h-screen max-w-7xl pt-6 px-4 md:pr-0 bg-gray-900`}
-      >
-        <header className="px-0 md:pl-0 md:pr-4">
-          <Navigation />
-        </header>
-        <main className="max-h-screen h-[calc(100vh_-_14rem)] md:h-[calc(100vh_-_4.5rem)] pl-4 items-center overflow-visible">
-          {children}
-        </main>
-      </body>
-    </html>
+    <ApolloProvider>
+      <html lang="en">
+        <body
+          className={`${inter.className} mx-auto my-0 h-screen max-w-7xl pt-6 px-4 md:pr-0 bg-gray-900`}
+        >
+          <header className="px-0 md:pl-0 md:pr-4">
+            <Navigation />
+          </header>
+          <main className="max-h-screen h-[calc(100vh_-_14rem)] md:h-[calc(100vh_-_4.5rem)] pl-4 items-center overflow-visible">
+            {children}
+          </main>
+        </body>
+      </html>
+    </ApolloProvider>
   )
 }

@@ -1,27 +1,89 @@
 'use client'
-import { useState } from 'react'
+import { useMutation } from '@apollo/client'
+import { useMemo, useState } from 'react'
 
 import Button from '@/components/Button'
-import { isValidEmail } from '@/utils/is-valid-email'
+import { CREATE_USER } from '@/graphql'
+import { CreateUserInput, CreateUserResponse } from '@/graphql/types'
+import {
+  INITIAL_EMAIL_MESSAGE_STATUS_STATE,
+  isValidEmail,
+} from '@/utils/email-form'
 
 const EmailForm = () => {
+  const [createUser, { data, error, loading }] = useMutation<
+    CreateUserResponse,
+    CreateUserInput
+  >(CREATE_USER)
   const [email, setEmail] = useState('')
-  const [isInvalidEmail, setIsInvalidEmail] = useState(false)
+  const [emailMessageStatus, setEmailMessageStatus] = useState(
+    INITIAL_EMAIL_MESSAGE_STATUS_STATE
+  )
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const { buttonBgColor, buttonText } = useMemo(() => {
+    if (emailMessageStatus.isSuccess)
+      return {
+        buttonBgColor: '!bg-green-400',
+        buttonText: 'Sucesss!',
+      }
+
+    if (loading)
+      return {
+        buttonBgColor: '!bg-gray-700',
+        buttonText: 'Loading...',
+      }
+
+    return { buttonBgColor: '', buttonText: 'Start free trial' }
+  }, [emailMessageStatus.isSuccess, loading])
+
+  // eslint-disable-next-line sort-keys
+  console.log({ data, error, loading, buttonBgColor })
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // upload email
-
+    console.log('entered')
     if (!isValidEmail(email)) {
-      setIsInvalidEmail(true)
+      return setEmailMessageStatus(state => ({
+        ...state,
+        isSuccess: true,
+        text: `Successfully started your free 14-day trial!`,
+      }))
+    }
+
+    try {
+      await createUser({
+        variables: {
+          input: {
+            email,
+            name: 'test',
+            username: 'testing',
+          },
+        },
+      })
+      if (data) {
+        console.log('mutation-successful', { data })
+        setEmailMessageStatus(state => ({
+          ...state,
+          isSuccess: true,
+          text: `Successfully started your free 14-day trial!`,
+        }))
+      }
+    } catch (e) {
+      console.log({ error })
+      setEmailMessageStatus(state => ({
+        ...state,
+        isError: true,
+        text: 'Failed to register your email, please try again later.',
+      }))
     }
 
     setEmail('')
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (isInvalidEmail) {
-      setIsInvalidEmail(false)
+    const { isError, isSuccess, text } = emailMessageStatus
+    if (!!text && (isError || isSuccess)) {
+      setEmailMessageStatus(INITIAL_EMAIL_MESSAGE_STATUS_STATE)
     }
 
     setEmail(e.target.value)
@@ -29,8 +91,12 @@ const EmailForm = () => {
 
   return (
     <div>
-      <p className="text-red-500 text-sm mt-1 h-[20px] mb-1">
-        {isInvalidEmail ? 'Please enter a valid email address.' : ''}
+      <p
+        className={`${
+          emailMessageStatus.isSuccess ? 'text-green-400' : 'text-red-500'
+        } text-sm mt-1 h-[20px] mb-1`}
+      >
+        {emailMessageStatus.text}
       </p>
       <form
         className="flex md:flex-row flex-col gap-3 sm:gap-5"
@@ -51,9 +117,10 @@ const EmailForm = () => {
             placeholder="Enter your email"
             type="email"
             value={email}
+            required
           />
         </div>
-        <Button type="submit" text="Start free trial" />
+        <Button classNames={buttonBgColor} type="submit" text={buttonText} />
       </form>
     </div>
   )
