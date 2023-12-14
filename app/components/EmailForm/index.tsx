@@ -36,12 +36,8 @@ const EmailForm = () => {
     return { buttonBgColor: '', buttonText: 'Start free trial' }
   }, [emailMessageStatus.isSuccess, loading])
 
-  // eslint-disable-next-line sort-keys
-  console.log({ data, error, loading, buttonBgColor })
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log('entered')
     if (!isValidEmail(email)) {
       return setEmailMessageStatus(state => ({
         ...state,
@@ -61,7 +57,6 @@ const EmailForm = () => {
         },
       })
       if (data) {
-        console.log('mutation-successful', { data })
         setEmailMessageStatus(state => ({
           ...state,
           isSuccess: true,
@@ -69,7 +64,6 @@ const EmailForm = () => {
         }))
       }
     } catch (e) {
-      console.log({ error })
       setEmailMessageStatus(state => ({
         ...state,
         isError: true,
