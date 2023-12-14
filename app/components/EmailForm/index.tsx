@@ -88,12 +88,12 @@ const EmailForm = () => {
       <p
         className={`${
           emailMessageStatus.isSuccess ? 'text-green-400' : 'text-red-500'
-        } text-sm mt-1 h-[20px] mb-1`}
+        } mb-1 mt-1 h-[20px] text-sm`}
       >
         {emailMessageStatus.text}
       </p>
       <form
-        className="flex md:flex-row flex-col gap-3 sm:gap-5"
+        className="flex flex-col gap-3 sm:gap-5 md:flex-row"
         onSubmit={handleSubmit}
       >
         <div className="flex flex-col">
@@ -105,7 +105,7 @@ const EmailForm = () => {
             Email
           </label>
           <input
-            className="focus:outline-none text-black rounded-md px-4 py-3 w-full md:w-[393px]"
+            className="w-full rounded-md px-4 py-3 text-black focus:outline-none md:w-[393px]"
             id="email"
             onChange={handleChange}
             placeholder="Enter your email"

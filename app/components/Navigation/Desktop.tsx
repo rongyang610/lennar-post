@@ -1,12 +1,11 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 import Button from '@/components/Button'
 import { NAVIGATION_ITEMS_LEFT } from '@/utils/navigation'
 
 const DesktopNavigation = () => (
-  <div className="hidden md:flex justify-between w-full ml-10 ">
-    <ul className="gap-8 items-center md:flex">
+  <div className="ml-10 hidden w-full justify-between md:flex ">
+    <ul className="items-center gap-8 md:flex">
       {NAVIGATION_ITEMS_LEFT.map(({ slug, title }, key) => (
         <li key={slug + key}>
           <Link href={slug} className="hover:underline">

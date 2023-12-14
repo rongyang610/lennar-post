@@ -22,12 +22,12 @@ export default function RootLayout({
     <ApolloProvider>
       <html lang="en">
         <body
-          className={`${inter.className} mx-auto my-0 h-screen max-w-7xl pt-6 px-4 md:pr-0 bg-gray-900`}
+          className={`${inter.className} mx-auto my-0 h-screen max-w-7xl bg-gray-900 px-4 pt-6 md:pr-0`}
         >
           <header className="px-0 md:pl-0 md:pr-4">
             <Navigation />
           </header>
-          <main className="max-h-screen h-[calc(100vh_-_14rem)] md:h-[calc(100vh_-_4.5rem)] pl-4 items-center overflow-visible">
+          <main className="h-[calc(100vh_-_14rem)] max-h-screen items-center overflow-visible pl-4 md:h-[calc(100vh_-_4.5rem)]">
             {children}
           </main>
         </body>

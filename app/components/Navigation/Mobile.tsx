@@ -26,15 +26,15 @@ const MobileNavigation = () => {
       />
       {show && (
         <div
-          className="fixed opacity-75 h-screen z-10 top-0 left-0 w-full bg-gray-500"
+          className="fixed left-0 top-0 z-10 h-screen w-full bg-gray-500 opacity-75"
           onClick={handleClose}
         />
       )}
       <div
-        className={`fixed w-full z-20 px-1 pt-1 transition-all ease-in-out left-0 ${animationClasses}`}
+        className={`fixed left-0 z-20 w-full px-1 pt-1 transition-all ease-in-out ${animationClasses}`}
       >
-        <div className="flex flex-col px-5 pt-4 pb-6 bg-white rounded-lg">
-          <div className="flex justify-between w-full mb-8">
+        <div className="flex flex-col rounded-lg bg-white px-5 pb-6 pt-4">
+          <div className="mb-8 flex w-full justify-between">
             <Image alt="logo" src="/logo.svg" width={35} height={32} />
             <Image
               alt="close"
@@ -45,22 +45,22 @@ const MobileNavigation = () => {
               className="hover:cursor-pointer"
             />
           </div>
-          <div className="flex flex-col gap-5 mb-8">
+          <div className="mb-8 flex flex-col gap-5">
             {NAVIGATION_ITEMS_LEFT.map(({ slug, title }, key) => (
               <Link
                 href={slug}
                 key={slug + title + key}
-                className="text-gray-700 w-fit"
+                className="w-fit text-gray-700"
               >
                 {title}
               </Link>
             ))}
           </div>
-          <div className="flex flex-col gap-6 mx-1">
+          <div className="mx-1 flex flex-col gap-6">
             <Button text="Start free trial" />
             <div className="flex justify-center">
               <span className="text-gray-500">Existing customer?</span>
-              <Link href="/login" className="text-gray-900 ml-1 font-medium">
+              <Link href="/login" className="ml-1 font-medium text-gray-900">
                 Login
               </Link>
             </div>
