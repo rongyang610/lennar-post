@@ -8,7 +8,7 @@ export default function Home() {
     <section className="flex md:items-center h-full overflow-visible md:overflow-hidden relative">
       <Image
         alt="dashboard"
-        className="absolute m-auto w-[344px] h-[343px] md:w-auto md:h-auto my-0 md:my-auto mx-auto md:mx-0 left-0 md:left-auto right-0 bottom-[-160px] sm:bottom-[-100px] md:bottom-auto md:right-[-325px] lg:right-[-100px] xl:right-0 z-[-1]"
+        className="absolute m-auto w-[344px] h-[343px] md:w-[625px] md:h-[624px] my-0 md:my-auto mx-auto md:mx-0 left-0 md:left-auto right-0 bottom-[-160px] sm:bottom-[-100px] md:bottom-auto md:right-[-325px] lg:right-[-100px] xl:right-0 z-[-1]"
         src="/illustration.png"
         width={625}
         height={624}
